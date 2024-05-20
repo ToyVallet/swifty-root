@@ -8,13 +8,14 @@ import {
   VideoCameraOutlined,
 } from '@ant-design/icons';
 import { Button, Layout, Menu, theme } from 'antd';
+import Link from 'next/link';
 import React, { PropsWithChildren, useState } from 'react';
 
 import styles from './navigation.module.css';
 
 const { Header, Sider, Content } = Layout;
 
-function App({ children }: PropsWithChildren) {
+export default function Navigation({ children }: PropsWithChildren) {
   const [collapsed, setCollapsed] = useState(false);
   const {
     token: { colorBgContainer, borderRadiusLG },
@@ -32,17 +33,16 @@ function App({ children }: PropsWithChildren) {
             {
               key: '1',
               icon: <UserOutlined />,
-              label: 'nav 1',
+              label: '사용자 관리',
+              children: [
+                { key: '11', label: <Link href="/user">사용자 목록</Link> },
+                { key: '12', label: <Link href="/user">학교 목록</Link> },
+              ],
             },
             {
               key: '2',
-              icon: <VideoCameraOutlined />,
-              label: 'nav 2',
-            },
-            {
-              key: '3',
               icon: <UploadOutlined />,
-              label: 'nav 3',
+              label: <Link href="/festivals">축제 관리</Link>,
             },
           ]}
         />
@@ -75,5 +75,3 @@ function App({ children }: PropsWithChildren) {
     </Layout>
   );
 }
-
-export default App;
