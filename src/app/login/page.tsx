@@ -35,6 +35,7 @@ export default function Page() {
         value: data.accessToken,
         option: {
           maxAge: 100 * 60 * 60 * 24,
+          httpOnly: true,
         },
       });
       await createCookie({
@@ -42,6 +43,7 @@ export default function Page() {
         value: data.refreshToken,
         option: {
           maxAge: 100 * 60 * 60 * 24 * 10,
+          httpOnly: true,
         },
       });
 
