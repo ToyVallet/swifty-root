@@ -14,7 +14,7 @@ export async function getFestivalDetail(subId: string) {
   return datas;
 }
 
-export async function getMockFestivalDetail() {
+export async function getMockFestivalDetail(subId: string): Promise<FestivalDetailResponse> {
   return ({
     "adminFestivalInfoResponse": {
       "subId": "6fa85f64-5717-4562-b3fc-2c963f66afa6",

@@ -21,13 +21,13 @@ export async function getAllFestivals() {
   return datas;
 }
 
-export async function getMockAllFestivals() {
+export async function getMockAllFestivals(): Promise<FestivalInfoResponse[]> {
   return (
     [
       {
         "subId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
         "name": "단국대 축제",
-        "addr": "단국대 주소",
+        "addr": "단국대학교",
         "startDate": "2024-05-23T13:57:23.132Z",
         "endDate": "2024-05-23T13:57:23.132Z",
         "description": "2024년 단국대학교 축제 `Orbit`"
@@ -35,7 +35,7 @@ export async function getMockAllFestivals() {
       {
         "subId": "2fa85f64-5717-4562-b3fc-2c963f66afa6",
         "name": "서울대 축제",
-        "addr": "서울대 주소",
+        "addr": "서울대학교",
         "startDate": "2024-05-23T13:57:23.132Z",
         "endDate": "2024-05-23T13:57:23.132Z",
         "description": "2024년 서울대학교 축제 `Sorbit`"

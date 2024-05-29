@@ -1,7 +1,6 @@
 import Link from "next/link";
+import { Card, CardList } from "@/app/components";
 import { getMockAllFestivals } from "./data";
-import Card from "@/app/components/ui/card";
-import CardList from "@/app/components/ui/card-list";
 import styles from "./page.module.css";
 
 export default async function Page() {

@@ -9,7 +9,7 @@ import styles from './page.module.css';
 export default async function Page({ params: { id } }: {
   params: { id: string }
 }) {
-  const concertInfo = await getMockFestivalDetail();
+  const concertInfo = await getMockFestivalDetail(id);
   const dataSource = concertInfo.adminConcertInfoResponses.map(concert => ({
     key: concert.subId,
     subId: concert.subId,
