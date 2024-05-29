@@ -22,7 +22,7 @@ export async function createCookie(data: CookieOption) {
   cookies().set(data.name, data.value, { ...data.option });
 }
 
-export function getCookieValue(name: string) {
+export async function getCookieValue(name: string) {
   const cookieStore = cookies();
   const value = cookieStore.get(name);
   return value;

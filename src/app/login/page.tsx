@@ -34,16 +34,20 @@ export default function Page() {
         name: 'swifty-access',
         value: data.accessToken,
         option: {
-          maxAge: 100 * 60 * 60 * 24,
+          maxAge: 60 * 60 * 24 * 7, // 일주일
           httpOnly: true,
+          secure: true,
+          sameSite: 'strict',
         },
       });
       await createCookie({
         name: 'swifty-refresh',
         value: data.refreshToken,
         option: {
-          maxAge: 100 * 60 * 60 * 24 * 10,
+          maxAge: 60 * 60 * 24 * 30, //한달
           httpOnly: true,
+          secure: true,
+          sameSite: 'strict',
         },
       });
 
