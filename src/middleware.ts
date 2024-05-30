@@ -6,7 +6,7 @@ export async function middleware(request: NextRequest) {
   const url = request.nextUrl.clone();
   const token = await getCookieValue(COOKIE_KEYS.accessToken);
 
-  if (token) {
+  /*   if (token) {
     // 로그인 페이지에 접근하려는 경우 리다이렉트
     if (url.pathname === '/login') {
       url.pathname = '/';
@@ -18,7 +18,7 @@ export async function middleware(request: NextRequest) {
       url.pathname = '/login'; // 로그인 페이지로 리다이렉트
       return NextResponse.redirect(url);
     }
-  }
+  } */
 
   return NextResponse.next();
 }
