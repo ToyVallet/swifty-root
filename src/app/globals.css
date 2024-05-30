@@ -1,6 +1,6 @@
 @layer base {
-  input[type="number"]::-webkit-inner-spin-button,
-  input[type="number"]::-webkit-outer-spin-button {
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
   }
@@ -66,7 +66,7 @@ input:-webkit-autofill:active {
 }
 
 input.password {
-  font-family: "pass", "Roboto", Helvetica, Arial, sans-serif;
+  font-family: 'pass', 'Roboto', Helvetica, Arial, sans-serif;
   font-size: 18px;
   &::-webkit-input-placeholder {
     transform: scale(0.77);
@@ -78,7 +78,7 @@ input.password {
   }
   &:-ms-input-placeholder {
     font-size: 14px;
-    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    font-family: 'Roboto', Helvetica, Arial, sans-serif;
   }
 }
 
@@ -86,4 +86,14 @@ input.password {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-transition: background-color 9999s ease-out;
+  -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+  -webkit-text-fill-color: #000 !important;
 }
