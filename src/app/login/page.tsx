@@ -1,8 +1,7 @@
 'use client';
 
-import { createCookie } from '@/app/lib/cookies';
 import type { FormProps } from 'antd';
-import { Button, Checkbox, Form, Input } from 'antd';
+import { Button, Form, Input } from 'antd';
 import { useRouter } from 'next/navigation';
 
 import styles from './login.module.css';
@@ -21,17 +20,20 @@ export default function Page() {
         headers: {
           'Content-type': 'application/json',
         },
+        credentials: 'include',
         body: JSON.stringify(values),
       });
-      console.log(res.status, res);
+
       const data: {
         accessToken: string;
         refreshToken: string;
       } = await res.json();
 
-      // 쿠키 생성
+      console.log(data);
+
+      /*       // 쿠키 생성
       await createCookie({
-        name: 'swifty-access',
+        name: COOKIE_KEYS.accessToken,
         value: data.accessToken,
         option: {
           maxAge: 60 * 60 * 24 * 7, // 일주일
@@ -41,7 +43,7 @@ export default function Page() {
         },
       });
       await createCookie({
-        name: 'swifty-refresh',
+        name: COOKIE_KEYS.refreshToken,
         value: data.refreshToken,
         option: {
           maxAge: 60 * 60 * 24 * 30, //한달
@@ -49,7 +51,7 @@ export default function Page() {
           secure: true,
           sameSite: 'strict',
         },
-      });
+      }); */
 
       router.replace('/');
     } catch (err) {

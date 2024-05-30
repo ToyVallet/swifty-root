@@ -25,5 +25,8 @@ export async function createCookie(data: CookieOption) {
 export async function getCookieValue(name: string) {
   const cookieStore = cookies();
   const value = cookieStore.get(name);
-  return value;
+  if (value?.value) {
+    return value.value;
+  }
+  return null;
 }
