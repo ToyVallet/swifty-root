@@ -5,5 +5,5 @@ export {
   API_CLIENT,
   API_FESTIVAL,
   API_SEARCH,
-  API_LOGIN,
+  API_AUTH,
 } from '@/constant/api';
