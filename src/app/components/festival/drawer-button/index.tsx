@@ -1,13 +1,13 @@
 "use client";
 
 import React, { useState } from 'react';
-import { Button, Drawer, DrawerProps, Select, Space } from 'antd';
+import { Button, Drawer, DrawerProps, Space } from 'antd';
 import clsx from 'clsx';
 import styles from './drawer-button.module.css';
 
 const variantButtons = {
   'concert-create': '콘서트 추가',
-  'concert-update': '콘서트 수정',
+  'concert-update': '수정',
   'lineup-create': '라인업 추가',
   'lineup-update': '수정',
 } as const;

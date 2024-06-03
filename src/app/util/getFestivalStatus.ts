@@ -1,10 +1,17 @@
-export default function getFestivalStatus(startDateStr: string, endDateStr: string): 'before' | 'pending' | 'end' {
-  const startDate = new Date(startDateStr);
-  const endDate = new Date(endDateStr);
+function convertToKST(dateStr: string): Date {
+  const date = new Date(dateStr);
+  date.setHours(date.getHours() + 9);
+  return date;
+}
+
+export default function getFestivalStatus(startDateStr: string, endDateStr: string): 'BEFORE' | 'PROCESS' | 'CLOSED' {
+  const startDate = convertToKST(startDateStr);
+  const endDate = convertToKST(endDateStr);
   const now = new Date();
   if (now < startDate)
-    return "before";
+    return 'BEFORE';
   if (now >= startDate && now <= endDate)
-    return "pending";
-  return "end";
+    return 'PROCESS';
+  return 'CLOSED';
 }
+

@@ -1,4 +1,4 @@
-import { Navigation } from '@/app/components';
+import { Navigation } from '@components/ui';
 import { AntdRegistry } from '@ant-design/nextjs-registry';
 import type { Metadata } from 'next';
 import { spaceGrotesk } from '@/app/styles/font';

@@ -9,7 +9,7 @@ import {
 import { Button, Layout, Menu, theme } from 'antd';
 import Link from 'next/link';
 import React, { PropsWithChildren, useState } from 'react';
-import { Logo } from '@/app/components';
+import { Logo } from '@components/ui';
 import styles from './navigation.module.css';
 
 const { Header, Sider, Content } = Layout;

@@ -16,10 +16,10 @@ export async function getFestivalDetail(subId: string) {
 
 export async function getMockFestivalDetail(subId: string): Promise<FestivalDetailResponse> {
   return ({
-    "adminFestivalInfoResponse": {
+    adminFestivalInfoResponse: {
       "subId": "6fa85f64-5717-4562-b3fc-2c963f66afa6",
       "name": "단국대 축제",
-      "addr": "단국대 주소",
+      "addr": "단국대학교",
       "startDate": "2024-05-23T14:51:24.779Z",
       "endDate": "2024-05-23T14:51:24.779Z",
       "revealStartDate": "2024-05-23T14:51:24.779Z",
@@ -30,7 +30,7 @@ export async function getMockFestivalDetail(subId: string): Promise<FestivalDeta
       "poster": "string",
       "logo": "string"
     },
-    "adminConcertInfoResponses": [
+    adminConcertInfoResponses: [
       {
         "subId": "55585f64-5717-4562-b3fc-2c963f66afa6",
         "name": "1일차",

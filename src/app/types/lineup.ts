@@ -4,5 +4,5 @@ type LineUpInfoResponse = {
   description: string;
   performanceDate: string;
   lineUpImagePath: string;
-  isOpened: "BEFORE" | "PENDING" | "CLOSED";
+  isOpened: "BEFORE" | "PROCESS" | "CLOSED";
 }

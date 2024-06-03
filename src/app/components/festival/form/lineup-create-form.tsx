@@ -1,6 +1,7 @@
 "use client";
 
-import { Button as AntdButton, Col, DatePicker, Form, Input, Row, DatePickerProps } from 'antd';
+import { Col, DatePicker, Form, Input, Row, DatePickerProps } from 'antd';
+import { Upload } from '@components/festival';
 export default function LineupCreateForm() {
   const onChange: DatePickerProps['onChange'] = (date, dateString) => {
     console.log(date, dateString);
@@ -42,6 +43,17 @@ export default function LineupCreateForm() {
             rules={[{ required: true, message: 'Please choose the dateTime' }]}
           >
             <DatePicker onChange={onChange} placeholder='2024-05-28' />
+          </Form.Item>
+        </Col>
+      </Row>
+      <Row gutter={16}>
+        <Col span={12}>
+          <Form.Item
+            name="newFile"
+            label="NewFile"
+            rules={[{ required: true, message: 'Please choose the dateTime' }]}
+          >
+            <Upload />
           </Form.Item>
         </Col>
       </Row>

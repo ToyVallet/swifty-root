@@ -8,6 +8,7 @@
   position: relative;
   font-weight: 700;
   border-radius: 8px;
+  text-indent: 0.5rem;
 }
 
 .notifier::before {
@@ -18,37 +19,33 @@
   top: 50%;
   transform: translateY(-50%);
   border-radius: 9999px;
+  left: 1rem;
 }
 
 .notifier.before::before {
   background: #33D69F;
-  left: 1.5rem;
 }
 
 .notifier.pending::before {
   background: #FF8F00;
-  left: 1.25rem;
 }
 
 .notifier.end::before {
   background: #373B53;
-  left: 2rem;
 }
 
 .before {
   color: #33D69F;
   background: #E6F9F0;
-  text-indent: 1rem;
 }
 
 .pending {
   color: #FF8F00;
   background: #FFF4E6;
-  text-indent: 1.25rem;
+  text-indent: 1rem;
 }
 
 .end {
   color: #373B53;
   background: #F1F1F4;
-  text-indent: 0.75rem;
 }

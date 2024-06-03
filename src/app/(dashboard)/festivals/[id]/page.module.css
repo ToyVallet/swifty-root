@@ -1,14 +1,10 @@
-.heading {
+.headerWrapper {
   margin-top: 2rem;
-}
-
-.wrapper {
   display: flex;
-  flex-flow: column nowrap;
+  flex-flow: row nowrap;
+  align-items: center;
 }
 
-.lineupCreateButton {
-  align-self: end;
-  transform: translateY(2.5rem);
-  z-index: 100;
+.statusNotifier {
+  margin-left: 2rem;
 }
