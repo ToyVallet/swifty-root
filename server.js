@@ -11,8 +11,8 @@ const handle = app.getRequestHandler();
 const PORT = 3000;
 
 const httpsOptions = {
-  key: fs.readFileSync('./localhost+4-key.pem'),
-  cert: fs.readFileSync('./localhost+4.pem'),
+  key: fs.readFileSync('./localhost-key.pem'),
+  cert: fs.readFileSync('./localhost.pem'),
 };
 
 app.prepare().then(() => {
@@ -41,7 +41,9 @@ app.prepare().then(() => {
           console.error('HTTP Server Error:', err);
           throw err;
         }
-        console.log(`> Ready on http://localhost:${PORT}`);
+        console.log(
+          `> Ready on http://localhost:${PORT} or https://localhost.swifty.kr:${PORT}`,
+        );
       });
   }
 });
