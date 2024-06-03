@@ -1,5 +1,5 @@
-import { COOKIE_KEYS } from '@/app/lib/contants';
 import { getCookieValue } from '@/app/lib/cookies';
+import { COOKIE_KEYS } from '@/constant';
 import { NextRequest, NextResponse } from 'next/server';
 
 export async function middleware(request: NextRequest) {

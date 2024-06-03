@@ -1,6 +1,6 @@
 'use server';
 
-import { COOKIE_KEYS } from '@/app/lib/contants';
+import { COOKIE_KEYS } from '@constant';
 import { cookies } from 'next/headers';
 import { RedirectType, redirect } from 'next/navigation';
 

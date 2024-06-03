@@ -1,5 +1,5 @@
 import { isExpiredRefresh } from '@/app/api/is-expired-refresh';
-import { SERVER_URL } from '@/app/lib/contants';
+import { SERVER_URL } from '@constant';
 
 export interface ErrorResponse {
   message: string;

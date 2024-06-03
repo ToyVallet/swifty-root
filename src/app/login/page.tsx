@@ -1,7 +1,7 @@
 'use client';
 
 import { customFetch } from '@/app/api';
-import { API } from '@/app/lib/contants';
+import { API_LOGIN } from '@/constant';
 import type { FormProps } from 'antd';
 import { Button, Form, Input } from 'antd';
 import { useRouter } from 'next/navigation';
@@ -17,7 +17,7 @@ export default function Page() {
   const [form] = Form.useForm();
   const router = useRouter();
   const onFinish: FormProps<FieldType>['onFinish'] = async (values) => {
-    await customFetch(API.login, {
+    await customFetch(API_LOGIN, {
       method: 'POST',
       headers: {
         'Content-type': 'application/json',
@@ -71,8 +71,3 @@ export default function Page() {
     </main>
   );
 }
-
-/**
- *
- *
- */
