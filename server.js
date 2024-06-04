@@ -1,7 +1,6 @@
 const http = require('http');
 const { parse } = require('url');
 const next = require('next');
-
 const https = require('https');
 const fs = require('fs');
 
@@ -24,18 +23,27 @@ app.prepare().then(() => {
         handle(req, res, parsedUrl);
       })
       .listen(PORT, (err) => {
-        if (err) throw err;
-        console.log(`> HTTPS: Ready on https://localhost:${PORT}`);
+        if (err) {
+          console.error('HTTPS Server Error:', err);
+          throw err;
+        }
+        console.log(`> HTTPS: Ready on https://localhost.swifty.kr:${PORT}`);
       });
   } else {
     http
       .createServer((req, res) => {
         const parsedUrl = parse(req.url, true);
+        console.log('HTTP Request:', req.url);
         handle(req, res, parsedUrl);
       })
       .listen(PORT, (err) => {
-        if (err) throw err;
-        console.log(`> Ready on http://localhost:${PORT}`);
+        if (err) {
+          console.error('HTTP Server Error:', err);
+          throw err;
+        }
+        console.log(
+          `> Ready on http://localhost:${PORT} or https://localhost.swifty.kr:${PORT}`,
+        );
       });
   }
 });
