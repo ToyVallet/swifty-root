@@ -30,3 +30,7 @@ export async function getCookieValue(name: string) {
   }
   return null;
 }
+
+export async function deleteCookie(name: string) {
+  cookies().delete(name);
+}
