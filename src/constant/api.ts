@@ -9,7 +9,7 @@ export const API_CLIENT = {
 } as const;
 
 export const API_FESTIVAL = {
-  lineup: (id?: string) => (id ? `/admin/festival/${id}` : '/admin/festival'),
+  festival: (id?: string) => (id ? `/admin/festival/${id}` : '/admin/festival'),
   detail: (id: string) => `/admin/festival/detail/${id}`,
 } as const;
 
