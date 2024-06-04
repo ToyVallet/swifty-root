@@ -20,7 +20,6 @@ export default function Tabs({
         />
         <DrawerButton
           variant='concert-create'
-        // onClick={add}
         >
           <ConcertCreateForm />
         </DrawerButton>

@@ -57,9 +57,6 @@ export default function TableBoard({
   };
 
   const add = () => {
-    // const newActiveKey = `newTab${newTabIndex.current++}`;
-    // setItems([...items, { label: 'New Tab', children: 'New Tab Pane', key: newActiveKey }]);
-    // setActiveKey(newActiveKey);
   };
 
   const remove = (targetKey: TargetKey) => {
@@ -85,7 +82,11 @@ export default function TableBoard({
         <DrawerButton className={styles.lineupCreateButton} variant='lineup-create'>
           <LineupCreateForm />
         </DrawerButton>
-        <Table columns={columnsOfTable} dataSource={dataSource} />
+        <Table
+          columns={columnsOfTable}
+          dataSource={dataSource}
+          pagination={false}
+        />
       </div>
     </>
   );
