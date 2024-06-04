@@ -4,7 +4,6 @@ import { Col, DatePicker, Form, Input, Row, DatePickerProps } from 'antd';
 import { Upload } from '@components/festival';
 export default function LineupCreateForm() {
   const onChange: DatePickerProps['onChange'] = (date, dateString) => {
-    console.log(date, dateString);
   };
   return (
     <Form layout="vertical" hideRequiredMark>

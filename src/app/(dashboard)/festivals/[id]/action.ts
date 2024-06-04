@@ -19,6 +19,5 @@ export async function createConcert(values: RequestType) {
     body: JSON.stringify(values),
   });
   const datas = await res.json();
-  console.log(`datas: ${datas}`);
   return datas;
 }

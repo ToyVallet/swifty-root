@@ -2,7 +2,6 @@ import { Col, DatePicker, Form, Input, Row, TimePicker, DatePickerProps } from '
 
 export default function ConcertUpdateForm() {
   const onChange: DatePickerProps['onChange'] = (date, dateString) => {
-    console.log(date, dateString);
   };
   return (
     <Form layout="vertical" hideRequiredMark>

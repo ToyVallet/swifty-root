@@ -3,7 +3,6 @@
 import { Col, DatePicker, Form, Input, Row, DatePickerProps } from 'antd';
 export default function LineupUpdateForm() {
   const onChange: DatePickerProps['onChange'] = (date, dateString) => {
-    console.log(date, dateString);
   };
   return (
     <Form layout="vertical" hideRequiredMark>

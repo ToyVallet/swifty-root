@@ -10,7 +10,6 @@ export async function getFestivalDetail(subId: string) {
     },
   });
   const datas = await res.json();
-  console.log(`datas: ${datas}`);
   return datas;
 }
 

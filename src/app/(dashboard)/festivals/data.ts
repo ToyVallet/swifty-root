@@ -17,7 +17,6 @@ export async function getAllFestivals() {
     },
   });
   const datas: ResponseType[] = await res.json();
-  console.log(`datas: ${datas}`);
   return datas;
 }
 

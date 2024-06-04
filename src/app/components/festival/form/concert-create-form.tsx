@@ -1,7 +1,6 @@
 import { Col, DatePicker, Form, Input, Row, TimePicker, DatePickerProps } from 'antd';
 export default function ConcertCreateForm() {
   const onChange: DatePickerProps['onChange'] = (date, dateString) => {
-    console.log(date, dateString);
   };
   return (
     <Form layout="vertical" hideRequiredMark>
