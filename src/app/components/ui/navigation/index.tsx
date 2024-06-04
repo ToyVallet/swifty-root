@@ -5,28 +5,41 @@ import {
   MenuUnfoldOutlined,
   UploadOutlined,
   UserOutlined,
-  VideoCameraOutlined,
 } from '@ant-design/icons';
 import { Button, Layout, Menu, theme } from 'antd';
 import Link from 'next/link';
 import React, { PropsWithChildren, useState } from 'react';
-
+import { Logo } from '@components/ui';
 import styles from './navigation.module.css';
 
 const { Header, Sider, Content } = Layout;
 
-export default function Navigation({ children }: PropsWithChildren) {
+export default function Navigation({
+  children
+}: PropsWithChildren) {
   const [collapsed, setCollapsed] = useState(false);
   const {
-    token: { colorBgContainer, borderRadiusLG },
+    token: {
+      colorBgContainer,
+    },
   } = theme.useToken();
 
   return (
-    <Layout className={styles.navigation}>
-      <Sider trigger={null} collapsible collapsed={collapsed}>
+    <Layout
+      className={styles.navigation}
+    >
+      <Sider
+        className={styles.sider}
+        trigger={null}
+        collapsible
+        collapsed={collapsed}
+      >
+        <Logo variant={collapsed ? 'small' : 'default'} />
         <div className="demo-logo-vertical" />
         <Menu
-          theme="dark"
+          style={{
+            borderInlineEnd: 'none'
+          }}
           mode="inline"
           defaultSelectedKeys={['1']}
           items={[
@@ -48,30 +61,20 @@ export default function Navigation({ children }: PropsWithChildren) {
         />
       </Sider>
       <Layout>
-        <Header style={{ padding: 0, background: colorBgContainer }}>
+        <Header
+          className={styles.header}
+          style={{ background: '#F8F8F8' }}
+        >
           <Button
-            type="text"
+            type="primary"
             icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
             onClick={() => setCollapsed(!collapsed)}
-            style={{
-              fontSize: '16px',
-              width: 64,
-              height: 64,
-            }}
           />
         </Header>
-        <Content
-          style={{
-            margin: '24px 16px',
-            padding: 24,
-            minHeight: 280,
-            background: colorBgContainer,
-            borderRadius: borderRadiusLG,
-          }}
-        >
+        <Content className={styles.content}>
           {children}
         </Content>
       </Layout>
-    </Layout>
+    </Layout >
   );
 }
