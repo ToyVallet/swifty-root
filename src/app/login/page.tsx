@@ -19,13 +19,10 @@ export default function Page() {
   const onFinish: FormProps<FieldType>['onFinish'] = async (values) => {
     await customFetch(API_AUTH.login, {
       method: 'POST',
-      headers: {
-        'Content-type': 'application/json',
-      },
-      credentials: 'include',
       body: JSON.stringify(values),
     });
-    form.resetFields();
+    form.setFieldValue('formId', '');
+    form.setFieldValue('password', '');
     router.replace('/');
   };
 
@@ -33,20 +30,20 @@ export default function Page() {
     errorInfo,
   ) => {
     console.log('Failed:', errorInfo);
-    form.resetFields();
   };
 
   return (
     <main className={styles.main}>
       <Form
+        form={form}
         name="basic"
         labelCol={{ span: 8 }}
         wrapperCol={{ span: 16 }}
         style={{ maxWidth: 600 }}
-        initialValues={{ remember: true }}
+        initialValues={{ remember: false }}
         onFinish={onFinish}
         onFinishFailed={onFinishFailed}
-        autoComplete="off"
+        autoComplete="on"
       >
         <Form.Item<FieldType>
           label="아이디"

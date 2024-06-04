@@ -1,4 +1,4 @@
-import { isExpiredRefresh } from '@/app/api/is-expired-refresh';
+import { checkStatusForRefreshToken } from '@/app/api/check-status-for-RefreshToken';
 import { SERVER_URL } from '@constant';
 
 export interface ErrorResponse {
@@ -8,20 +8,25 @@ export interface ErrorResponse {
   trackingId: string;
 }
 
-const isErrorResponse = (data: unknown): data is ErrorResponse => {
-  return typeof data === 'object' && data !== null && 'message' in data;
-};
+const isErrorResponse = (data: unknown): data is ErrorResponse =>
+  typeof data === 'object' && data !== null && 'trackingId' in data;
 
 export async function customFetch<T>(
   url: string,
   option?: RequestInit,
 ): Promise<T> {
   try {
-    const response = await fetch(`${SERVER_URL}${url}`, option);
-    isExpiredRefresh(response);
+    const response = await fetch(`${SERVER_URL}${url}`, {
+      headers: {
+        'Content-type': 'application/json',
+      },
+      credentials: 'include',
+      ...option,
+    });
+    await checkStatusForRefreshToken(response.status);
     if (!response.ok) {
       const error: ErrorResponse = await response.json();
-      throw new Error(error.message);
+      throw error;
     }
     const data: T = await response.json();
     return data;
