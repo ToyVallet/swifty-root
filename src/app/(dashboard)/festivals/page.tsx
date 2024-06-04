@@ -1,11 +1,10 @@
 import Link from "next/link";
 import { Card, CardList } from "@components/festival";
 import getFestivalStatus from "@util/getFestivalStatus";
-import { getAllFestivals, getMockAllFestivals } from "./data";
 import styles from "./page.module.css";
+import { getMockAllFestivals } from "./data";
 
 export default async function Page() {
-  // const datas = await getAllFestivals();
   const datas = await getMockAllFestivals();
   return (
     <main className={styles.main}>

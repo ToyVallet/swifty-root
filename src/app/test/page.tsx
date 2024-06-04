@@ -1,10 +1,14 @@
-import { cookies } from "next/headers";
+import { cookies } from 'next/headers';
 
-export default async function page() {
-  const nextCookies = cookies();
-  // 2. get next cookie
+export default async function Page() {
+  const cookie = cookies().getAll();
   return (
-    <>{JSON.stringify(nextCookies.get('swifty-access'))}</>
-  )
+    <div>
+      {cookie.map((item) => (
+        <span key={item.name}>
+          {item.name} {item.value}
+        </span>
+      ))}
+    </div>
+  );
 }
-

@@ -41,6 +41,7 @@
       "@util/*": [
         "./src/app/util/*"
       ],
+      "@constant": ["./src/constant"]
     }
   },
   "include": [
